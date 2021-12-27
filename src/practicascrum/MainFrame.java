@@ -18,6 +18,7 @@ public class MainFrame extends javax.swing.JFrame {
      * Creates new form MainFrame
      */
     AnadirTransaccion at = new AnadirTransaccion();
+    IdentificarInfluencia ii = new IdentificarInfluencia();
 
     static ArrayList<Transaccion> transacciones = new ArrayList<>();
     static Integer SVA = 0;
@@ -28,6 +29,7 @@ public class MainFrame extends javax.swing.JFrame {
         initComponents();
         this.setTitle("Cálculo Punto Función");
         at.setVisible(false);
+        ii.setVisible(false);
     }
 
     /**
@@ -170,6 +172,7 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void jMenu3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu3MouseClicked
         //CALCULO DE LA INFLUENCIA
+        ii.setVisible(true);
     }//GEN-LAST:event_jMenu3MouseClicked
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
