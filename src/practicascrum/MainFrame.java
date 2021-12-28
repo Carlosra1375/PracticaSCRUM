@@ -19,7 +19,8 @@ public class MainFrame extends javax.swing.JFrame {
      */
     AnadirTransaccion at = new AnadirTransaccion();
     IdentificarInfluencia ii = new IdentificarInfluencia();
-
+    CalculoEsfuerzoDuracion ced = new CalculoEsfuerzoDuracion();
+    
     static ArrayList<Transaccion> transacciones = new ArrayList<>();
     static Integer SVA = 0;
     static Integer PFNA = 0;
@@ -30,6 +31,7 @@ public class MainFrame extends javax.swing.JFrame {
         this.setTitle("Cálculo Punto Función");
         at.setVisible(false);
         ii.setVisible(false);
+        ced.setVisible(false);
     }
 
     /**
@@ -157,7 +159,12 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-
+       //CALCULO ESFUERZO DURACION
+       if (transacciones.size() > 0) {
+            ced.setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(this, "Error, no existen aún transacciones");
+        }
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
@@ -225,7 +232,8 @@ public class MainFrame extends javax.swing.JFrame {
     
     public static void calcula(){
         //TRAS INSERTAR UNA TRANSACCION PUEDO CALCULAR TODO ESTO
-        
+        //PFNA = CalculoPFNA.calculoPFNA();
+        //PFA = MostrarAjusteFinal.calculaPFA();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
