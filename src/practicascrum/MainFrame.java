@@ -21,6 +21,7 @@ public class MainFrame extends javax.swing.JFrame {
     IdentificarInfluencia ii = new IdentificarInfluencia();
     CalculoEsfuerzoDuracion ced = new CalculoEsfuerzoDuracion();
     MostrarAjusteFinal maf = new MostrarAjusteFinal();
+    MostrarComplejidad mc = new MostrarComplejidad();
     
     static ArrayList<Transaccion> transacciones = new ArrayList<>();
     static Integer SVA = 0;
@@ -34,6 +35,7 @@ public class MainFrame extends javax.swing.JFrame {
         ii.setVisible(false);
         ced.setVisible(false);
         maf.setVisible(false);
+        mc.setVisible(false);
     }
 
     /**
@@ -157,7 +159,13 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-
+       //MOSTRAR COMPLEJIDADES
+        if (transacciones.size() > 0) {
+            mc.actualizaTabla();
+            mc.setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(this, "Error, no existen aún transacciones");
+        }
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
