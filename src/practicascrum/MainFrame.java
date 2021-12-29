@@ -22,6 +22,7 @@ public class MainFrame extends javax.swing.JFrame {
     CalculoEsfuerzoDuracion ced = new CalculoEsfuerzoDuracion();
     MostrarAjusteFinal maf = new MostrarAjusteFinal();
     MostrarComplejidad mc = new MostrarComplejidad();
+    CalculoPFNA cpfna = new CalculoPFNA();
     
     static ArrayList<Transaccion> transacciones = new ArrayList<>();
     static Integer SVA = 0;
@@ -155,7 +156,14 @@ public class MainFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-
+      //CALCULO PFNA
+        //at.setVisible(true);       
+        if (transacciones.size() > 0) {
+            cpfna.muestraPFNA();
+            cpfna.setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(this, "Error, no existen aún transacciones");
+        }
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
@@ -248,8 +256,8 @@ public class MainFrame extends javax.swing.JFrame {
     
     public static void calcula(){
         //TRAS INSERTAR UNA TRANSACCION PUEDO CALCULAR TODO ESTO
-        //PFNA = CalculoPFNA.calculoPFNA();
-        //PFA = MostrarAjusteFinal.calculaPFA();
+        PFNA = CalculoPFNA.calculaPFNA();
+        PFA = MostrarAjusteFinal.calculaPFA();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
